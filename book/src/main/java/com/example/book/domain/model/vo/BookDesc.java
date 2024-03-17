@@ -16,4 +16,9 @@ public class BookDesc {
     private String isbn;
     private LocalDate publicationDate;
     private Source source;
+
+    public static BookDesc createBookDesc(String description, String author, String isbn, LocalDate publicationDate, Source source) {
+        return new BookDesc(description, author, isbn, publicationDate, source);
+    }
+
 }
