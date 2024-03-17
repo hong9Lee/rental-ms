@@ -34,4 +34,15 @@ public class Book {
         book.setBookStatus(BookStatus.ENTERED);
         return book;
     }
+
+    public Book makeAvailable() {
+        this.setBookStatus(BookStatus.AVAILABLE);
+        return this;
+    }
+
+    public Book makeUnAvailable() {
+        this.setBookStatus(BookStatus.UNAVAILABLE);
+        return this;
+    }
+
 }
