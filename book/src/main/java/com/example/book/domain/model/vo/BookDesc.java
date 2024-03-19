@@ -1,5 +1,6 @@
 package com.example.book.domain.model.vo;
 
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Embeddable
 public class BookDesc {
 
     private String description;

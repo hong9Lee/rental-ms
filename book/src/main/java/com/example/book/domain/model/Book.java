@@ -1,19 +1,26 @@
 package com.example.book.domain.model;
 
 import com.example.book.domain.model.vo.*;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long no;
+
     private String title;
+
+    @Embedded
     private BookDesc desc;
     private Classfication classfication;
     private BookStatus bookStatus;
