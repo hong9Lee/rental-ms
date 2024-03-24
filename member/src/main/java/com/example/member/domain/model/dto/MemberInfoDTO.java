@@ -1,17 +1,15 @@
-package com.example.member.domain.model.vo;
+package com.example.member.domain.model.dto;
 
-import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
-@Embeddable
-public class IDName {
-
+@NoArgsConstructor
+@Data
+public class MemberInfoDTO {
     private String id;
     private String name;
-
+    private String pwd;
+    private String email;
 }

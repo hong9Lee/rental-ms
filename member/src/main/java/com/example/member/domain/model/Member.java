@@ -1,6 +1,7 @@
 package com.example.member.domain.model;
 
 import com.example.member.domain.model.vo.*;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,13 +12,21 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Entity
 public class Member {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long memberNo;
+    @Embedded
     private IDName idName;
+    @Embedded
     private Password password;
+    @Embedded
     private Email email;
+    @ElementCollection
     private List<Authority> authorityList = new ArrayList<Authority>();
+    @Embedded
     private Point point;
 
     public static Member registerMember(IDName idName, Password pwd, Email email) {
