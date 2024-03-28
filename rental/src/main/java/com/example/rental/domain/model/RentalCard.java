@@ -1,5 +1,8 @@
 package com.example.rental.domain.model;
 
+import com.example.rental.domain.model.event.ItemRented;
+import com.example.rental.domain.model.event.ItemReturned;
+import com.example.rental.domain.model.event.OverdueCleared;
 import com.example.rental.domain.model.vo.*;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
@@ -47,6 +50,18 @@ public class RentalCard {
 
     private void addReturnItem(ReturnItem returnItem) {
         this.returnItemList.add(returnItem);
+    }
+
+    public static ItemRented createItemRentedEvent(IDName idName, Item item, long point) {
+        return new ItemRented(idName, item, point);
+    }
+
+    public static ItemReturned createItemReturnEvent(IDName idName, Item item, long point) {
+        return new ItemReturned(idName, item, point);
+    }
+
+    public static OverdueCleared createItemOverdueClearedEvent(IDName idName, long point) {
+        return new OverdueCleared(idName, point);
     }
 
     // 대여 카드 생성
