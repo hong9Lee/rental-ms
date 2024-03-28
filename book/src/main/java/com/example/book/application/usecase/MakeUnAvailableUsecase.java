@@ -4,6 +4,6 @@ import com.example.book.framework.web.dto.BookOutputDTO;
 
 public interface MakeUnAvailableUsecase {
 
-    public BookOutputDTO unavailable(long bookNo);
+    BookOutputDTO unavailable(Long bookNo);
 
 }
