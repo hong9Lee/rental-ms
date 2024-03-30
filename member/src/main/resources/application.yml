@@ -48,3 +48,9 @@ consumer:
     name: overdue_clear
   groupid:
     name: member
+producers:
+  topic1:
+    name: rental_result
+
+kafka:
+  bootstrapAddress: localhost:9092
